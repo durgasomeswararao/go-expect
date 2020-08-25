@@ -215,7 +215,7 @@ func (c *Console) Close() error {
 
 // Send writes string s to Console's tty.
 func (c *Console) Send(s string) (int, error) {
-	c.Logf("console send: %q", s)
+	//c.Logf("console send: %q", s)
 	n, err := c.ptm.WriteString(s)
 	for _, observer := range c.opts.SendObservers {
 		observer(s, n, err)
